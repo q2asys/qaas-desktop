@@ -1,0 +1,19 @@
+{
+  "name": "qaas-desktop",
+  "productName": "Q&A System",
+  "version": "0.0.1",
+  "description": "Question and answer system",
+  "main": "./dist/main/main.js",
+  "author": {
+    "name": "lanbery",
+    "email": "lanbery@gmail.com",
+    "url": "https://q2asys.github.io"
+  },
+  "scripts": {
+    "electron-rebuild": "node -r ../../.erb/scripts/babel-register.js ../../.erb/scripts/electron-rebuild.js",
+    "link-modules": "node -r ../../.erb/scripts/babel-register.js ../../.erb/scripts/link-modules.js",
+    "postinstall": "yarn electron-rebuild && yarn link-modules"
+  },
+  "license": "MIT",
+  "dependencies": {}
+}
