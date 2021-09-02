@@ -12,7 +12,6 @@ if (process.env.NODE_ENV === 'development') {
     return url.href;
   };
 } else {
-  resolveHtmlPath = (htmlFileName: string) => {
-    return `file://${path.resolve(__dirname, '../renderer/', htmlFileName)}`;
-  };
+  resolveHtmlPath = (htmlFileName: string) =>
+    `file://${path.resolve(__dirname, '../aui/', htmlFileName)}`;
 }

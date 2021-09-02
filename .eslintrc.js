@@ -1,21 +1,29 @@
 module.exports = {
   root: true,
-  extends: ['airbnb', 'airbnb-typescript', 'prettier'],
+  parser: '@babel/eslint-parser',
+  extends: ['prettier', 'prettier/react'],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2017,
     sourceType: 'module',
-    project: './tsconfig.json',
-    tsconfigRootDir: __dirname,
-    createDefaultProgram: true,
+    // project: './tsconfig.json',
+    // tsconfigRootDir: __dirname,
+    // createDefaultProgram: true,
+    ecmaFeatures: {
+      experimentalObjectRestSpread: false,
+      jsx: true,
+    },
   },
   plugins: ['react', 'prettier'],
   rules: {
     // A temporary hack related to IDE not resolving correct package.json
     'import/no-extraneous-dependencies': 'off',
+    'no-console': ['error', { allow: ['warn', 'error', 'log'] }],
+    'react/static-property-placement': ['off'],
   },
   env: {
     node: true,
     browser: true,
+    es6: true,
   },
   settings: {
     'import/resolver': {

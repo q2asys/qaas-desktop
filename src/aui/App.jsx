@@ -1,6 +1,13 @@
 import React, { PureComponent } from 'react';
+import { Provider } from 'react-redux';
+import { Router } from 'react-router-dom';
 
+import RouterComp from './router';
+
+import configureStore, { history } from './store/configureStore';
 import './App.global.scss';
+
+const store = configureStore({});
 
 class App extends PureComponent {
   constructor(props) {
@@ -9,7 +16,14 @@ class App extends PureComponent {
   }
 
   render() {
-    return <div className='main-root'>HHHHHHHH</div>;
+    return (
+      <Provider store={store}>
+        <Router history={history}>
+          <div className='main-root'>HHHHHHHH</div>
+          <RouterComp />
+        </Router>
+      </Provider>
+    );
   }
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "qaas-desktop",
   "productName": "Q&A System",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Question and answer system",
   "main": "./dist/main/main.js",
   "author": {
